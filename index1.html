@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>page 2/4</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f4f4f4;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .box {
+      background: #2c2726;
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 360px;
+      margin: auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .countdown {
+      font-size: 36px;
+      font-weight: bold;
+      color: #ffd700;
+      margin-top: 20px;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.2); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    #followBtn, #secondCountdown, #nextPageBtn {
+      display: none;
+    }
+
+    .btn {
+      background: white;
+      color: #ff0000;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h1>page 2/4</h1>
+  <div class="box">
+    <p>يرجى الانتظار...</p>
+    <div class="countdown" id="initialCountdown">5</div>
+
+    <button class="btn" id="followBtn">Follow Me</button>
+
+    <div class="countdown" id="secondCountdown">10</div>
+
+    <a class="btn" id="nextPageBtn" href="index2.html">الانتقال إلى الصفحة التالية</a>
+  </div>
+
+  <script>
+    const initialCountdown = document.getElementById("initialCountdown");
+    const followBtn = document.getElementById("followBtn");
+    const secondCountdown = document.getElementById("secondCountdown");
+    const nextPageBtn = document.getElementById("nextPageBtn");
+
+    let count = 5;
+    const firstInterval = setInterval(() => {
+      count--;
+      if (count > 0) {
+        initialCountdown.textContent = count;
+      } else {
+        clearInterval(firstInterval);
+        initialCountdown.style.display = "none";
+        followBtn.style.display = "inline-block";
+      }
+    }, 1000);
+
+    followBtn.addEventListener("click", () => {
+      window.open("https://www.tiktok.com/@vex444ff", "_blank", "noopener,noreferrer");
+
+      followBtn.style.display = "none";
+      let secondCount = 10;
+      secondCountdown.textContent = secondCount;
+      secondCountdown.style.display = "block";
+
+      const secondInterval = setInterval(() => {
+        secondCount--;
+        if (secondCount > 0) {
+          secondCountdown.textContent = secondCount;
+        } else {
+          clearInterval(secondInterval);
+          secondCountdown.style.display = "none";
+          nextPageBtn.style.display = "inline-block";
+        }
+      }, 1000);
+    });
+  </script>
+</body>
+</html>

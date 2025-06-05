@@ -1,0 +1,78 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: #E3F2FD;
+  padding: 20px;
+  direction: rtl;
+}
+
+.download-btn {
+  outline: none;
+  border: none;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 14px 20px;
+  border-radius: 8px;
+  background: #4A98F7;
+  transition: all 0.2s ease;
+  font-size: 1.1rem;
+  width: 100%;
+  max-width: 320px;
+}
+
+.download-btn:hover {
+  background: #2382f6;
+}
+
+.download-btn.timer {
+  color: #000;
+  background: none;
+  font-size: 1.3rem;
+  pointer-events: none;
+  text-align: center;
+}
+
+.download-btn.timer b {
+  color: #4A98F7;
+  padding: 0 6px;
+}
+
+.download-btn .icon {
+  font-size: 1.8rem;
+}
+
+.download-btn .text {
+  font-size: 1.1rem;
+  padding-right: 10px;
+}
+
+/* استجابة خاصة للشاشات الصغيرة */
+@media (max-width: 480px) {
+  .download-btn {
+    font-size: 1rem;
+    padding: 12px 18px;
+  }
+
+  .download-btn .icon {
+    font-size: 1.6rem;
+  }
+
+  .download-btn .text {
+    font-size: 1rem;
+  }
+}
